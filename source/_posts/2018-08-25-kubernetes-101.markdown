@@ -1,0 +1,11 @@
+---
+extends: _layouts.post
+title: 'Kubernetes 101'
+date:   2018-08-25
+tags: kubernetes
+section: content
+---
+
+I took some notes while I was learning Kubernetes, added more content to it after my experiments and it resulted in an article that covers the basics, like lingo (naming of things in the Kubernetes World), architecture of a Kubernetes cluster. I also work through deploying a demo Laravel application in a Kubernetes environment.
+
+If you are into Laravel, Docker, and/or Kubernetes, check it out at [madewithlove's blog](https://madewithlove.com/kubernetes-101-the-basics/).
