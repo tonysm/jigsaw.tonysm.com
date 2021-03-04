@@ -60,7 +60,6 @@ OOP is really good at modelling abstract concepts. Things that are not tangible,
 It happens to fit the "noun" and "verb" rule, because that makes sense in our context so far. Here's a simple example of a deposit:
 
 ```php
-
 class Account extends Model
 {
   public function deposit(int $amountInCents)
@@ -103,7 +102,6 @@ Polymorphism means: multiple forms. The idea is that I can build different imple
 The trick would be to have the Account model never touching its balance by itself. The balance field would almost serve as a cached value of the result of every applied Transaction. The Account would then pass itself down to the Transaction expecting the transaction to update its balance. The Transaction would then *delegate* that task to each transactionable and they could apply their changes to the Account. It sounds more complicated than it actually is, here's the deposit example:
 
 ```php
-
 use Illuminate\Database\Eloquent\Model;
 
 class Account extends Model
@@ -242,7 +240,6 @@ This *declarative* nature is what both Kay and Armstrong are talking about. And 
 In our example, we could have a *Deposit* action in the our application. And it could be totally independent of the outside World (transport mechanisms - [I treat the database as an "inside" part of my apps](https://martinfowler.com/articles/badri-hexagonal/)), something like:
 
 ```php
-
 class Deposit
 {
   public function handle(Account $account, int $amountInCents): void
@@ -265,7 +262,6 @@ class Deposit
 If you notice, our Account model doesn't have a deposit method anymore (or doesn't need it). This is the decision I have mixed feelings about, to be honest. Maybe it's fine since we promoted the Deposit *message* to an object as well? We could also implement a Facade method in the Account that would delegate to this action:
 
 ```php
-
 class Account extends Model
 {
   public function deposit(int $amountInCents)

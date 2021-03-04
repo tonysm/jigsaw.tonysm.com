@@ -55,10 +55,15 @@ a:hover:after {
     background-color: #7daffa;
     background-color: rgba(125,175,250,var(--bg-opacity));
 }
+
+a.back:after {
+    @apply rounded-full;
+}
+
 /** Text Selection */
 
 img, .twitter-tweet {
-    @apply mx-auto;
+    @apply mx-auto shadow-xl;
 
     max-width: 70%;
 }
@@ -77,3 +82,29 @@ pre code::selection { @apply bg-blue-600; }
     @apply w-full object-contain;
     aspect-ratio: 16 / 9;
 }
+
+/** Code */
+
+.prose pre {
+    @apply shadow-lg;
+}
+
+pre code {
+    border: 3px dotted rgb(197, 219, 232);
+    font-family: MonoLisa, "Operator Mono", "IBM Plex", "JetBrains Mono", monospace;
+    font-size: 14px;
+}
+
+div.highlighter-rouge code {
+    display: block;
+    overflow-x: auto;
+    padding: 1rem;
+}
+
+blockquote {
+    font-style: italic;
+    border: thin solid black;
+    padding: 1rem;
+}
+
+blockquote p { margin: 0; }

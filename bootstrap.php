@@ -13,3 +13,9 @@
  *     // Your code here
  * });
  */
+
+use TightenCo\Jigsaw\Jigsaw;
+
+$events->afterBuild(function (Jigsaw $jigsaw) {
+    (new \App\Listeners\ApplySyntaxHighlighting())->handle($jigsaw);
+});

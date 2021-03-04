@@ -32550,11 +32550,17 @@ a:hover:after {
   background-color: rgba(125,175,250,var(--bg-opacity));
 }
 
+a.back:after {
+  border-radius: 9999px;
+}
+
 /** Text Selection */
 
 img, .twitter-tweet {
   margin-left: auto;
   margin-right: auto;
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   max-width: 70%;
 }
 
@@ -32579,6 +32585,34 @@ pre code::selection { --tw-bg-opacity: 1; background-color: rgba(37, 99, 235, va
      object-fit: contain;
   width: 100%;
   aspect-ratio: 16 / 9;
+}
+
+/** Code */
+
+.prose pre {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+pre code {
+  border: 3px dotted rgb(197, 219, 232);
+  font-family: MonoLisa, "Operator Mono", "IBM Plex", "JetBrains Mono", monospace;
+  font-size: 14px;
+}
+
+div.highlighter-rouge code {
+  display: block;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+blockquote {
+  font-style: italic;
+  border: thin solid black;
+  padding: 1rem;
+}
+
+blockquote p { margin: 0;
 }
 
 @media (min-width: 640px) {
@@ -191915,3 +191949,4 @@ pre code::selection { --tw-bg-opacity: 1; background-color: rgba(37, 99, 235, va
             animation: bounce 1s infinite;
   }
 }
+
