@@ -30,6 +30,16 @@
             </section>
 
             <section class="space-y-4">
+                <h2 class="text-3xl font-mono font-semibold mb-4">$ cat /var/courses.txt</h2>
+                <p>I've been working on some video content, you can find them here:</p>
+                
+                <ul class="list-disc ml-5">
+                    <li class="space-x-2"><a href="/courses/hotwire-laravel">Hotwire & Laravel</a> <span class="text-sm px-2 py-1 rounded bg-blue-100 text-blue-800">#free</span></li>
+                    <li class="space-x-2"><a href="/courses/kubernetes-for-laravel-developers">Kubernetes for Laravel Developers</a> <span class="text-sm px-2 py-1 rounded bg-blue-100 text-blue-800">#free</span></li>
+                </ul>
+            </section>
+
+            <section class="space-y-4">
                 <h2 class="text-3xl font-mono font-semibold">$ cat /var/thoughts.txt</h2>
                 <p>Writing is how we consolidate our learnings. Here's some of my writings:</p>
                 <div class="space-y-6">
