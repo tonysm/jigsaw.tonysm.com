@@ -240,6 +240,13 @@ This *declarative* nature is what both Kay and Armstrong are talking about. And 
 In our example, we could have a *Deposit* action in the our application. And it could be totally independent of the outside World (transport mechanisms - [I treat the database as an "inside" part of my apps](https://martinfowler.com/articles/badri-hexagonal/)), something like:
 
 ```php
+namespace App\Actions;
+
+use App\Models\Account;
+use App\Models\Transaction;
+use App\Models\Transactions\Deposit as DepositModel;
+use Illuminate\Support\Facades\DB;
+
 class Deposit
 {
   public function handle(Account $account, int $amountInCents): void
@@ -247,7 +254,7 @@ class Deposit
     DB::transaction(function () use ($account, $amountInCents) {
       $transaction = Transaction::make()
         ->transactionable()
-        ->associate(Deposit::create([
+        ->associate(DepositModel::create([
           'amount_cents' => $amountInCents,
         ]));
       
