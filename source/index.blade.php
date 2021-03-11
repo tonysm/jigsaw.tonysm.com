@@ -32,21 +32,27 @@
             <section class="space-y-4">
                 <h2 class="text-3xl font-mono font-semibold mb-4">$ cat /var/courses.txt</h2>
                 <p>I've been working on some video content, you can find them here:</p>
-                
+
                 <ul class="list-disc ml-5">
-                    <li class="space-x-2"><a href="/courses/hotwire-laravel">Hotwire & Laravel</a> <span class="text-sm px-2 py-1 rounded bg-blue-100 text-blue-800">#free</span></li>
-                    <li class="space-x-2"><a href="/courses/kubernetes-for-laravel-developers">Kubernetes for Laravel Developers</a> <span class="text-sm px-2 py-1 rounded bg-blue-100 text-blue-800">#free</span></li>
+                    <li class="space-x-2"><a href="/courses/hotwire-laravel">Hotwire & Laravel</a> <span
+                                class="text-sm px-2 py-1 rounded bg-blue-100 text-blue-800">#free</span></li>
+                    <li class="space-x-2"><a href="/courses/kubernetes-for-laravel-developers">Kubernetes for Laravel
+                            Developers</a> <span
+                                class="text-sm px-2 py-1 rounded bg-blue-100 text-blue-800">#free</span></li>
                 </ul>
             </section>
 
             <section class="space-y-4">
                 <h2 class="text-3xl font-mono font-semibold">$ cat /var/thoughts.txt</h2>
-                <p>Writing is how we consolidate our learnings. Here's some of my writings:</p>
+                <p>Writing is how we consolidate our learnings. I'm currently experimenting with
+                    [HEY World](https://world.hey.com/tonysm), so check it out for new posts. Here's
+                    some of my past writings:</p>
                 <div class="space-y-6">
                     @foreach($posts as $post)
                         <div class="p-6 rounded-lg border shadow-lg space-y-4">
                             <div class="text-center">
-                                <time datetime="{{ $page->date }}" class="text-sm text-gray-500">{{ date('F j, Y', $page->date) }}</time>
+                                <time datetime="{{ $page->date }}"
+                                      class="text-sm text-gray-500">{{ date('F j, Y', $page->date) }}</time>
 
                                 <h3 class="text-3xl font-bold">{{ $post->title }}</h3>
                             </div>
@@ -54,7 +60,9 @@
                             <p>{{ strip_tags(\Illuminate\Support\Str::limit($post->getContent(), 300)) }}</p>
 
                             <div class="text-center">
-                                <a href="{{ $post->getUrl() }}" class="inline-block mx-auto rounded-full border px-4 py-2 text-sm no-underline back">Read more</a>
+                                <a href="{{ $post->getUrl() }}"
+                                   class="inline-block mx-auto rounded-full border px-4 py-2 text-sm no-underline back">Read
+                                    more</a>
                             </div>
                         </div>
                     @endforeach
