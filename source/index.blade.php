@@ -51,8 +51,8 @@
                     @foreach($posts as $post)
                         <div class="p-6 rounded-lg border shadow-lg space-y-4">
                             <div class="text-center">
-                                <time datetime="{{ $page->date }}"
-                                      class="text-sm text-gray-500">{{ date('F j, Y', $page->date) }}</time>
+                                <time datetime="{{ $post->date }}"
+                                      class="text-sm text-gray-500">{{ date('F j, Y', $post->date) }}</time>
 
                                 <h3 class="text-3xl font-bold">{{ $post->title }}</h3>
                             </div>
