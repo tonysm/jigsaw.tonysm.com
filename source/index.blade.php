@@ -45,7 +45,7 @@
             <section class="space-y-4">
                 <h2 class="text-3xl font-mono font-semibold">$ cat /var/thoughts.txt</h2>
                 <p>Writing is how we consolidate our learnings. I'm currently experimenting with
-                    [HEY World](https://world.hey.com/tonysm), so check it out for new posts. Here's
+                    <a href="https://world.hey.com/tonysm">HEY World</a>, so check it out for new posts. Here's
                     some of my past writings:</p>
                 <div class="space-y-6">
                     @foreach($posts as $post)
