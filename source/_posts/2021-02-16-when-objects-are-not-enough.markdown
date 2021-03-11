@@ -216,18 +216,20 @@ This demonstrates that the right level of abstraction often simplifies our model
 
 So far we've talked about *promoting* methods to objects. But that is not quite the same as having Actions or UseCases as classes, right? That's more about having domain models at the right level of abstraction.
 
-In the seminar, Kay also states that objects are not enough when working on large scale systems. That's mainly because of the complexity of the systems. We want to be able to shut down, replace, and bring up parts of the system - or "modules", without affecting the entire system. Or, say, you could benefit from implementing a specific part of your system in another language because of performance reasons or a more accurate floating point calculation.
+In the seminar, Kay also states that objects are not enough when working on large scale systems. That's mainly because of the complexity of the systems. We want to be able to shut down, replace, and bring up parts of the system - or "modules", without affecting the entire system. Or, say, you could benefit from implementing a specific part of your system in another language because of performance reasons or a more accurate floating-point calculation.
 
-The problem here is that we are trying to shield the messages from the outside World (our protocol). And even with all the protections that OOP provides (such as encapsulation), it doesn't guarantee that you have a good architecture.
+The problem here is that we are trying to shield the messages from the outside World (our protocol). Even with all the protections that OOP provides (such as encapsulation), it doesn't guarantee that you have a good architecture.
 
-He even mentions that there were 2 phases when learning Smalltalk and OOP:
+Kay even mentions that there were 2 phases when learning Smalltalk and OOP:
 
 - On the first phase you're delighted with it. You think it's the silver bullet you've always been looking for;
 - The second phase is delusional, because you see first hand that Smalltalk doesn't scale.
 
 One way to make OOP work on such large scale systems is to create a class for the "goals" we want to guarantee in the application. It looks like a type in a typed language, but it's not a data structure. The focus should be on the goal, not on the type. Kay uses an example of a "Print" class, where each instance of this class is a message (instead of method calls in the object). These looks like what we see as Actions or Use Cases these days.
 
-Another problem of OOP he describes is that we tend to worry too much about the state our objects hold and neglect the control flow (who sends the message to whom). That ends up being a mess. An Object sends a message to another Object, which sends a message to a bunch of other Objects, and those send messages to even more objects. Good luck trying to understand this system.
+See, in Smalltalk, _everything is an object_. They take this very seriously. Even _messages_ are objects internally. The difference between a message and a function call is that the message contains the receiver. In IBM Smalltalk, for instance, they even have different classes for messages with and without the receiver (look for "Message and DirectedMessage" in the [manual](https://www.ibm.com/support/pages/system/files/support/swg/swgdocs.nsf/0/f443d51d7cc38f5685256ab8004f1a23/$FILE/stpr55.pdf)). So when we send a message to the object, we're essentially telling the _runtime_ to do a method dispatch on the receiver of that message. You can see that as the _default_ goal of a message. What Kay seems to be suggesting is that **we can create our own goals** for our own systems. We'll explore this in a bit.
+
+Another problem of OOP Kay describes is that we tend to worry too much about the state our objects hold and neglect the control flow (who sends the message to whom). That ends up becoming a mess. An Object sends a message to another Object, which sends a message to a bunch of other Objects, and those send messages to even more objects. Good luck trying to understand this system.
 
 ![Messages as methods](/assets/images/oop/05-oop-messages-as-methods.png)
 
@@ -235,9 +237,13 @@ Kay suggests what resembles a Pub/Sub approach. They were exploring a more *decl
 
 ![Message Broadcasting](/assets/images/oop/06-oop-message-broadcasting.png)
 
-This *declarative* nature is what both Kay and Armstrong are talking about. And it's present in some Functional Programming languages too (and if you want to see where the ideas OOP blends with FP, watch this talk by Anjana Vakil called "[Oops! OOP's not what I thought](https://www.youtube.com/watch?v=qMdxExJCD5s)").
+This declarative aspect is fascinating, and it's present in some Functional Programming languages too (if you want to see where the ideas OOP blends with FP, watch this talk by Anjana Vakil called "[Oops! OOP's not what I thought](https://www.youtube.com/watch?v=qMdxExJCD5s)").
 
-In our example, we could have a *Deposit* action in the our application. And it could be totally independent of the outside World (transport mechanisms - [I treat the database as an "inside" part of my apps](https://martinfowler.com/articles/badri-hexagonal/)), something like:
+### Messages as Objects
+
+Let's explore what Kay suggests in the Seminar for a second: the idea of implementing our own goals in the system.
+
+In our example, we could have a *Deposit* action in our application. It could be totally independent of the outside World (transport mechanisms - [I treat the database as an "inside" part of my apps](https://martinfowler.com/articles/badri-hexagonal/)), something like:
 
 ```php
 namespace App\Actions;
@@ -266,14 +272,16 @@ class Deposit
 }
 ```
 
-If you notice, our Account model doesn't have a deposit method anymore (or doesn't need it). This is the decision I have mixed feelings about, to be honest. Maybe it's fine since we promoted the Deposit *message* to an object as well? We could also implement a Facade method in the Account that would delegate to this action:
+If you notice, our Account model doesn't have a deposit method any more (or doesn't need it). This is the decision I have mixed feelings about, to be honest. Maybe it's fine since we promoted the Deposit *message* to an object as well? We could also implement a Facade method in the Account that would delegate to this action:
 
 ```php
+use App\Actions\Deposit as DepositAction;
+
 class Account extends Model
 {
   public function deposit(int $amountInCents)
   {
-    (new Deposit())->handle($this, $amountInCents);
+    (new DepositAction())->handle($this, $amountInCents);
   }
 }
 ```
