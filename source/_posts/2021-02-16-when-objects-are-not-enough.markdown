@@ -1,6 +1,7 @@
 ---
 extends: _layouts.post
 title: "When Objects Aren't Enough"
+permalink: when-objects-are-not-enough
 date:   2021-02-16
 tags: oop laravel
 section: content
