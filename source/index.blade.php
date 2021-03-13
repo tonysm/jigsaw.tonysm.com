@@ -40,7 +40,7 @@
                             Developers</a> <span
                                 class="text-sm px-2 py-1 rounded bg-blue-100 text-blue-800">#free</span></li>
 		</ul>
-		<p>You can find more videos on my <a href="https://www.youtube.com/c/TonyMessiasDev">YouTube channel</a>.</p>
+		<p>You can find more videos on my <a href="https://www.youtube.com/c/TonyMessiasDev">YouTube channel</a> 🎬.</p>
             </section>
 
             <section class="space-y-4">
