@@ -22,7 +22,6 @@ Either way, I had to fix something first: we need a local state in our page comp
 The issue with Infinite Scrolling and Inertia is that we usually pass data down to your components from the controller and using it as props on the page component:
 
 ```php
-
 class ChatRoomsController extends Controller
 {
   public function show(ChatRoom $chatRoom)
@@ -38,13 +37,11 @@ class ChatRoomsController extends Controller
     ]);
   }
 }
-
 ```
 
 In the page component, we would have something like this:
 
 ```html
-
 <template>
   <div>
     <button @click="loadMore">Load more...</button>
@@ -69,7 +66,6 @@ In the page component, we would have something like this:
     },
   }
 </script>
-
 ```
 
 If we make another _Inertia visit_ to the `GET /chat-rooms/{chatRoom}` endpoint passing a `?page=2` query string, it would work in the backend, the query would skip the first items and give us the second "page" of messages, but Inertia would replace our `messages` prop, therefore we would lose track of the messages previously shown.
