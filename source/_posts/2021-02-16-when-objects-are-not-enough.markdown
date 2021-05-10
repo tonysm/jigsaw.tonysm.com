@@ -306,7 +306,7 @@ P.S.: I only now found this great talk from Anjana Vakil called "[Programming Ac
 
 P.S. 2: Some images here were created using [Excalidraw](http://excalidraw.com/)
 
-P.S. 3: As I was reading the book "Smalltalk Best Practice Patterns" I found out this was a known pattern in the Smalltalk days called *Method Object*. Kent Beck even states there that he was not going to include the pattern in the book, but it saved was really helpful once so he added it. He mentions this is useful usually in the "core" of the app when you need to interact with a bunch of objects and have temporary variables around. Another reference that suggests this should not be used for everything.
+P.S. 3: As I was reading the book "Smalltalk Best Practice Patterns" I found out this was a known pattern in the Smalltalk days called *Method Object*. Kent Beck even states there that he was not going to include the pattern in the book, but it was *really* helpful once so he added it. He mentions this is useful usually in the "core" of the app when you need to interact with a bunch of objects and have temporary variables around. Another reference that suggests this should not be used for everything.
 
 ## Criticism on OOP
 
