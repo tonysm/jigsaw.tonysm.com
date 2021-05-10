@@ -6,7 +6,7 @@ tags: patterns visitor double-dispatch
 section: content
 ---
 
-I have been reading the book "Smalltalk Best Pracice and Patterns", so I'm going to share some cool patterns in this blog. I shared this on Twitter:
+I have been reading the book "Smalltalk Best Practice and Patterns", so I'm going to share some cool patterns in this blog. I shared this on Twitter:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Some cool design patterns I&#39;ve learned recently:<br><br>- Method Object<br>- Double Dispatch (aka. Duet or Pas de Deux)<br>- Pluggable Behavior<br><br>🤓</p>&mdash; Tony Messias (@tonysmdev) <a href="https://twitter.com/tonysmdev/status/1391169860231704590?ref_src=twsrc%5Etfw">May 8, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
