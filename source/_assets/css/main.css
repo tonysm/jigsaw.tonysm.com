@@ -65,7 +65,7 @@ a.back:after {
 img, .twitter-tweet {
     @apply mx-auto shadow-xl;
 
-    max-width: 70%;
+    max-width: 80%;
 }
 
 ::-moz-selection { @apply bg-yellow-100; }
@@ -79,7 +79,7 @@ pre code::selection { @apply bg-blue-600; }
 }
 
 .embed-responsive iframe {
-    @apply w-full object-contain;
+    @apply object-contain w-full;
     aspect-ratio: 16 / 9;
 }
 
