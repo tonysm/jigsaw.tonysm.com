@@ -10,7 +10,7 @@ I have been reading the book "Smalltalk Best Pracice and Patterns", so I'm going
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Some cool design patterns I&#39;ve learned recently:<br><br>- Method Object<br>- Double Dispatch (aka. Duet or Pas de Deux)<br>- Pluggable Behavior<br><br>🤓</p>&mdash; Tony Messias (@tonysmdev) <a href="https://twitter.com/tonysmdev/status/1391169860231704590?ref_src=twsrc%5Etfw">May 8, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-And [Freek Van der Herten](https://twitter.com/freekmurze) mentioned that I should them in a blogpost. Here's is the first one. Well, techinically, the second one. See, I found another pattern that I like called "Method Object", but I have already covered it here in this blog on the post titled ["When Objects Are Not Enough"](https://www.tonysm.com/when-objects-are-not-enough/). Same idea. Which is cool. I've updated the post to add
+And [Freek Van der Herten](https://twitter.com/freekmurze) mentioned that I could cover them as blogposts. Here's is the first one. Well, techinically, the second one. See, I found another pattern that I like called "Method Object", but I have already covered it here in this blog on the post titled ["When Objects Are Not Enough"](https://www.tonysm.com/when-objects-are-not-enough/). Same idea. Which is cool. I've updated the post to add
 
 The computation of a method call is only dependent on a single object at a time. This is enough most of the time. *Sometimes* we need the computation to also depend on the argument being passed to the method call.
 
