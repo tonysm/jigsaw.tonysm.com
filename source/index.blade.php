@@ -2,20 +2,20 @@
 
 @section('body')
     <div class="leading-relaxed">
-        <div class="max-w-6xl mx-auto pt-10 md:pt-36">
-            <h1 class="text-5xl md:text-6xl text-center font-bold mb-4">Hey, there!</h1>
+        <div class="max-w-6xl pt-10 mx-auto md:pt-36">
+            <h1 class="mb-4 text-5xl font-bold text-center md:text-6xl">Hey, there!</h1>
         </div>
-        <div class="max-w-2xl mx-auto content space-y-16 py-10 md:pt-36">
+        <div class="max-w-2xl py-10 mx-auto space-y-16 content md:pt-36">
             <section class="space-y-4">
-                <h2 class="text-3xl font-mono font-semibold mb-4">$ whoami</h2>
+                <h2 class="mb-4 font-mono text-3xl font-semibold">$ whoami</h2>
                 <p>My name is <strong>Tony Messias</strong>, a curious <em>Software Geek</em> from Brazil 🇧🇷.</p>
             </section>
 
             <section class="space-y-4">
-                <h2 class="text-3xl font-mono font-semibold mb-4">$ cat /var/work.txt</h2>
-                <p>I'm working at <a href="https://worksitesafety.ca/">Worksite Safety</a> as a Lead PHP Developer.
-                    Working primarily with Laravel/PHP/Vue.</p>
-                <p>Before that, I worked at <a href="https://madewithlove.com/">madewithlove</a> as a Full-Stack
+                <h2 class="mb-4 font-mono text-3xl font-semibold">$ cat /var/work.txt</h2>
+                <p>I'm working at <a href="https://tighten.co/">Tighten</a> as a Programmer (Full Stack).</p>
+                <p>I was previously working at <a href="https://worksitesafety.ca/">Worksite Safety</a> as a Lead PHP Developer, primarily with Laravel/PHP/Vue.</p>
+                <p>And before that, I worked at <a href="https://madewithlove.com/">madewithlove</a> as a Full-Stack
                     Software Engineer, and part-time DevOps for a bit more than 5 years. Built the most different kind
                     of projects: from content platforms, to booking websites, to real-estate systems, and even a bit of
                     IoT working on a building management platform (yes, automating all sorts of things in a building).
@@ -30,27 +30,27 @@
             </section>
 
             <section class="space-y-4">
-                <h2 class="text-3xl font-mono font-semibold mb-4">$ cat /var/courses.txt</h2>
+                <h2 class="mb-4 font-mono text-3xl font-semibold">$ cat /var/courses.txt</h2>
                 <p>I've been working on video content, you can find them here:</p>
 
-                <ul class="list-disc ml-5">
+                <ul class="ml-5 list-disc">
                     <li class="space-x-2"><a href="/courses/hotwire-laravel">Hotwire & Laravel</a> <span
-                                class="text-sm px-2 py-1 rounded bg-blue-100 text-blue-800">#free</span></li>
+                                class="px-2 py-1 text-sm text-blue-800 bg-blue-100 rounded">#free</span></li>
                     <li class="space-x-2"><a href="/courses/kubernetes-for-laravel-developers">Kubernetes for Laravel
                             Developers</a> <span
-                                class="text-sm px-2 py-1 rounded bg-blue-100 text-blue-800">#free</span></li>
+                                class="px-2 py-1 text-sm text-blue-800 bg-blue-100 rounded">#free</span></li>
 		</ul>
 		<p>You can find more videos on my <a href="https://www.youtube.com/c/TonyMessiasDev">YouTube channel</a> 🎬.</p>
             </section>
 
             <section class="space-y-4">
-                <h2 class="text-3xl font-mono font-semibold">$ cat /var/thoughts.txt</h2>
+                <h2 class="font-mono text-3xl font-semibold">$ cat /var/thoughts.txt</h2>
                 <p>Writing is how we consolidate our learnings. I'm currently experimenting with
                     <a href="https://world.hey.com/tonysm">HEY World</a>, so check that out for new posts. Here's
                     some of my past writings:</p>
                 <div class="space-y-6">
                     @foreach($posts as $post)
-                        <div class="p-6 rounded-lg border shadow-lg space-y-4">
+                        <div class="p-6 space-y-4 border rounded-lg shadow-lg">
                             <div class="text-center">
                                 <time datetime="{{ $post->date }}"
                                       class="text-sm text-gray-500">{{ date('F j, Y', $post->date) }}</time>
@@ -62,7 +62,7 @@
 
                             <div class="text-center">
                                 <a href="{{ $post->getUrl() }}"
-                                   class="inline-block mx-auto rounded-full border px-4 py-2 text-sm no-underline back">Read
+                                   class="inline-block px-4 py-2 mx-auto text-sm no-underline border rounded-full back">Read
                                     more</a>
                             </div>
                         </div>
