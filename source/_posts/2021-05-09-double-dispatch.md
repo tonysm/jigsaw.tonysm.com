@@ -20,7 +20,7 @@ The computation of a method call is only dependent on the object receiving the m
 
 Think you have two hierarchies of objects interacting with each other and the computation of these interactions depends on both objects, not only in one of them. Maybe some examples will make this clearer.
 
-We're going to TDD our way through this pattern using [Pest](https://pestphp.com/). Feel free to use whatever you want. All classes are in the same test file as the test for the sake of the demo.
+We're going to TDD our way through this pattern using [Pest](https://pestphp.com/). Feel free to use whatever you want. All classes are in the same file as the test for the sake of the demo.
 
 ## Example: Adding Integers and Floats
 
