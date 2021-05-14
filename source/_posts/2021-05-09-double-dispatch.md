@@ -10,9 +10,9 @@ I have been reading the book "Smalltalk Best Practice and Patterns", so I'm goin
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Some cool design patterns I&#39;ve learned recently:<br><br>- Method Object<br>- Double Dispatch (aka. Duet or Pas de Deux)<br>- Pluggable Behavior<br><br>🤓</p>&mdash; Tony Messias (@tonysmdev) <a href="https://twitter.com/tonysmdev/status/1391169860231704590?ref_src=twsrc%5Etfw">May 8, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-And [Freek Van der Herten](https://twitter.com/freekmurze) mentioned that I could cover them as blogposts. Here's is the first one. Well, technically, the second one. See, I found another pattern that I like called "Method Object", but I have already covered it here in this blog in the post titled ["When Objects Are Not Enough"](https://www.tonysm.com/when-objects-are-not-enough/). Same idea. Which is cool. I've updated the post to add this reference.
+And [Freek Van der Herten](https://twitter.com/freekmurze) mentioned that I could cover them as blogposts. Here's is the first one. Well, technically, the second one. See, the first pattern I mentioned there called "Method Object" was already covered here in this blog in the post titled ["When Objects Are Not Enough"](https://www.tonysm.com/when-objects-are-not-enough/). Same idea. Which is cool. I've updated the post to add this reference.
 
-Now to the pattern.
+Now to Double Dispatch!
 
 ## Introduction
 
@@ -20,7 +20,7 @@ The computation of a method call is only dependent on the object receiving the m
 
 Think you have two hierarchies of objects interacting with each other and the computation of these interactions depends on both objects, not only in one of them. Maybe some examples will make this clearer.
 
-We're going to TDD our way through this pattern using [Pest](https://pestphp.com/). Feel free to use whatever you want.
+We're going to TDD our way through this pattern using [Pest](https://pestphp.com/). Feel free to use whatever you want. All classes are in the same test file as the test for the sake of the demo.
 
 ## Example: Adding Integers and Floats
 
@@ -31,6 +31,17 @@ We'll start with the use case of adding only integers:
 ```php
 declare(strict_types = 1);
 
+test('adds integers', function () {
+  $first = new IntegerNumber(40);
+  $second = new IntegerNumber(2);
+
+  $this->assertSame(42, $first->add($second)->value);
+});
+```
+
+Let's add `IntegerNumber` class to the top of the test file to make the test pass (right below the `declare()` call):
+
+```php
 class IntegerNumber
 {
   public function __construct(public int $value) {}
@@ -40,18 +51,22 @@ class IntegerNumber
   	return new IntegerNumber($this->value + $number->value);
   }
 }
+```
 
-test('adds integers', function () {
-  $first = new IntegerNumber(40);
-  $second = new IntegerNumber(2);
+That works. Notice that we added a `declare(strict_types = 1);` to the PHP file. I did this because PHP is very smart and is able to sum integers and floats, so I wanted to force us to manually cast the values for the purpose of this example.
 
-  $this->assertSame(42, $first->add($second)->value);
+Let's add test for adding floats:
+
+```php
+test('adds floats', function () {
+  $first = new FloatNumber(40.0);
+  $second = new FloatNumber(2.0);
+
+  $this->assertSame(42.0, $first->add($second)->value);
 });
 ```
 
-That works. For now. Notice that we added a `declare(strict_types = 1);` to the PHP file. I did this because PHP is very smart and is able to sum integers and floats, so I wanted to force us to manually cast the values for the purpose of this example.
-
-Let's add test for adding floats:
+And, to make it pass, let's add the `FloatNumber` class:
 
 ```php
 class FloatNumber
@@ -63,13 +78,6 @@ class FloatNumber
     return new FloatNumber($this->value + $number->value);
   }
 }
-
-test('adds floats', function () {
-  $first = new FloatNumber(40.0);
-  $second = new FloatNumber(2.0);
-
-  $this->assertSame(42.0, $first->add($second)->value);
-});
 ```
 
 Our tests should be green. So far, so good. Let's add our first cross-addition: adding integers and floats.
@@ -88,7 +96,7 @@ OK, how can we get that one working? The answer is: Double Dispatch. The pattern
 
 > Send a message to the argument. Append the class name of the receiver to the selector. Pass the receiver as an argument. (Kent Beck in "Smalltalk Best Practice Patterns", pg. 56)
 
-This was in Smalltalk. For us, the *selector* is the method name (close enough). Let's apply the pattern. First, let's handle our first use case adding integers:
+This was in Smalltalk. For us, the *selector* is the method name (or close enough). Let's apply the pattern. First, let's handle our first use case adding integers:
 
 ```php
 class IntegerNumber
@@ -107,7 +115,9 @@ class IntegerNumber
 }
 ```
 
-If we run the first test, it should still pass (the last test should still be broken). Now, let's apply the pattern to floats so we can add floats together:
+If we run the first test, it should still pass. That's because we're adding two instances of the `IntegerNumber` class. The receiber of the `add()` message will call the `addInteger` on the argument and pass itself to it. At that point, we have two integer primitives, so we can return a new instance summing the primitives.
+
+Now, let's make a similar change to the `FloatNumber` class:
 
 ```php
 class FloatNumber
@@ -126,14 +136,18 @@ class FloatNumber
 }
 ```
 
-Our first two tests should be passing now. Nice! Let's now add the cross methods. First, an integer only knows how to add other integers (primitives). Similarly, floats should only know how to add their own primitives. However, integers should be able to convert themselves to floats and vice-versa. This will allow us to add floats and integers. Let's see how an integer handles adding floats:
+Our first two tests should be passing now. Nice! Let's now add the cross methods. First, an integer only knows how to add other integers (primitives). Similarly, floats should only know how to add their own primitives. However, integers should be able to convert themselves to floats and vice-versa. This will allow us to add floats and integers together.
+
+When a _Float Number_ instance receives the `add()` message with an instance of the `IntegerNumber` class, it will call the `addFloat` on the argument, and pass itself as along. So we need an `IntegerNumber::addFloat(Float $number)` method. As we discussed, an `IntegerNumber` number doesn't know how to sum floats, but it knows how to convert itself to a float. And who knows how to add two floats together? The `FloatNumber` instance! So, at that point, the `IntegerNumber` instance will cast itself to Float and call the `addFloat()` on the float number instance with that. Then, the float number does the primiting addition and returns a new instance of a `FloatNumber`.
+
+Similarly, when an _Integer Number_ instance receives the `add()` message with an instance of a `FloatNumber` class, it will call `addInteger` on it, passing itself to it. Then, the _Float Number_ will cast itself to an integer and pass that back to the integer calling `addInteger`. Again, at that point, Integer can do the primitive addition and return a new instance of an `IntegerNumber` class.
+
+Here's the final solution for both the `IntegerNumber` and the `FloatNumber` classes:
 
 ```php
 class IntegerNumber
 {
-    public function __construct(public int $value)
-    {
-    }
+    public function __construct(public int $value) {}
 
     public function add($number)
     {
@@ -150,7 +164,7 @@ class IntegerNumber
         return $number->addFloat($this->asFloat());
     }
 
-    public function asFloat()
+    private function asFloat()
     {
         return new FloatNumber(floatval($this->value));
     }
@@ -158,9 +172,7 @@ class IntegerNumber
 
 class FloatNumber
 {
-    public function __construct(public float $value)
-    {
-    }
+    public function __construct(public float $value) {}
 
     public function add($number)
     {
@@ -188,13 +200,11 @@ class FloatNumber
 
 It works! Nice. If you're like me, you're now delighted with such a sophisticated implementation.
 
-When an integer receives a float to add, it will call the `FloatNumber::addInteger($this)` passing itself to it. The `FloatNumber` object will then convert itself to `Integer` and call the `Integer::addInteger()` passing itself converted to `Integer`. So, at that point we have `Integer::addInteger()` receiving an instance of an `Integer` object, which should just add the two integer primitives. This happens the other way around when the `FloatNumber::add()` receives an instance of `Integer`.
-
 Isn't this cool?
 
 ## Example: Star Trek
 
-OK, the numbers example was cool and all, but chances are we're not implementing a language. Is this even useful anywhere else? Well, the important thing about a pattern is the design, not the implementation. You can re-use this implementation in other contexts.
+OK, the numbers example was cool and all, but chances are we're not implementing a language. Is this even useful anywhere else? Well, the important thing about a pattern is the design, not the implementation. You can re-use the same design on different contexts.
 
 Let's say we're building a Star Trek game. We'll control a spaceship and there might be some enemies along the way, so they have to fight. Some enemies will be critical while others will not cause any damage depending on the spaceship.
 
@@ -218,9 +228,7 @@ The implementation would be something like this:
 ```php
 class Shuttle
 {
-    public function __construct(public int $hitpoints)
-    {
-    }
+    public function __construct(public int $hitpoints) {}
 
     public function fight($enemy)
     {
@@ -255,9 +263,7 @@ Let's implement our new spaceship:
 ```php
 class UssVoyager
 {
-    public function __construct(public int $hitpoints)
-    {
-    }
+    public function __construct(public int $hitpoints) {}
 
     public function fight($enemy)
     {
@@ -281,7 +287,7 @@ test('borg cube critically damages the shuttle', function () {
 });
 ```
 
-Let's implement the Bug Cube enemy:
+Let's implement the Borg Cube enemy:
 
 ```php
 class BorgCube
