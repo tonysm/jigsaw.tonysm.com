@@ -14,7 +14,7 @@ In that talk, she goes on refactoring some code into smaller objects and giving 
 
 One thing that got me thinking was that "_Listing_" class. She has talked about such classes before in other talks. I remember another talk where she mentions that "the controller should only talk to a single class". Well, the Listing is that class (I think).
 
-Recently, in a [podcast](https://twitter.com/JasonSwett/status/1222157273226792960), they explored that view a bit more, and it was confirmed that this is indeed the class that the controller should talk to.
+Recently, in a [podcast](https://www.codewithjason.com/rails-with-jason-podcast/episodes/sandi-metz-IMiYdMAn/), they explored that view a bit more, and it was confirmed that this is indeed the class that the controller should talk to.
 
 During the interview, they go over another example referring to a _ReconcilableCharges_ class that talks to the AR models (or objects that respond to messages sent to the AR models). She even goes into the folder structure and states that these are the only classes allowed to interact with the AR models.
 
