@@ -1,15 +1,15 @@
 @extends('_layouts.main')
 
 @section('body')
-    <a href="/" class="back md:shadow-lg bg-white z-10 my-4 text-sm no-underline inline-block mx-auto text-center border border-gray-700 rounded-full px-4 py-2 md:fixed md:top-0 md:left-5">
+    <a href="/" class="z-10 inline-block px-4 py-2 mx-auto my-4 text-sm text-center no-underline bg-white border border-gray-700 rounded-full button-link back md:shadow-lg md:fixed md:top-0 md:left-5">
         ᐊ back to home
     </a>
 
     <div class="leading-relaxed">
-        <div class="max-w-6xl mx-auto pt-10 md:pt-36">
-            <h1 class="text-5xl md:text-6xl text-center font-bold mb-4">Kubernetes for Laravel Developers</h1>
+        <div class="max-w-6xl pt-10 mx-auto md:pt-36">
+            <h1 class="mb-4 text-5xl font-bold text-center md:text-6xl">Kubernetes for Laravel Developers</h1>
         </div>
-        <div class="max-w-2xl mx-auto content py-10 prose prose-lg">
+        <div class="max-w-2xl py-10 mx-auto prose prose-lg content">
             <p>In this video series, I’m going to show you how I wrap a Laravel application in containers to deploy it
                 to a Kubernetes cluster.</p>
 

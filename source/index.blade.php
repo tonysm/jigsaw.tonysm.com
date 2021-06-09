@@ -8,7 +8,7 @@
         <div class="max-w-2xl py-10 mx-auto space-y-16 content md:pt-36">
             <section class="space-y-4">
                 <h2 class="mb-4 font-mono text-3xl font-semibold">$ whoami</h2>
-                <p>My name is <strong>Tony Messias</strong>, a curious <em>Software Geek</em> from Brazil 🇧🇷.</p>
+                <p>I'm <strong>Tony Messias</strong>, a curious <em>programmer</em> from Brazil 🇧🇷.</p>
             </section>
 
             <section class="space-y-4">
@@ -50,7 +50,7 @@
                     some of my past writings:</p>
                 <div class="space-y-6">
                     @foreach($posts as $post)
-                        <div class="p-6 space-y-4 border rounded-lg shadow-lg">
+                        <div class="p-6 space-y-4 border rounded-lg shadow-lg hover:shadow-xl">
                             <div class="text-center">
                                 <time datetime="{{ $post->date }}"
                                       class="text-sm text-gray-500">{{ date('F j, Y', $post->date) }}</time>
@@ -62,7 +62,7 @@
 
                             <div class="text-center">
                                 <a href="{{ $post->getUrl() }}"
-                                   class="inline-block px-4 py-2 mx-auto text-sm no-underline border rounded-full back">Read
+                                   class="inline-block px-4 py-2 mx-auto text-sm no-underline border rounded-full button-link back hover:shadow-lg">Read
                                     more</a>
                             </div>
                         </div>

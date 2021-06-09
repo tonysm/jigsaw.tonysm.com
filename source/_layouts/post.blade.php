@@ -1,13 +1,13 @@
 @extends('_layouts.main')
 
 @section('body')
-    <a href="/" class="back md:shadow-lg bg-white z-10 my-4 text-sm no-underline inline-block mx-auto text-center border border-gray-700 rounded-full px-4 py-2 md:fixed md:top-0 md:left-5">
+    <a href="/" class="z-10 inline-block px-4 py-2 mx-auto my-4 text-sm text-center no-underline bg-white border border-gray-700 rounded-full button-link back md:shadow-lg md:fixed md:top-0 md:left-5">
         ᐊ back to home
     </a>
-    <div class="max-w-6xl mx-auto content space-y-10 py-10 md:py-24">
-        <h1 class="text-5xl md:text-6xl leading-snug text-center font-bold">{{ $page->title }}</h1>
+    <div class="max-w-6xl py-10 mx-auto space-y-10 content md:py-24">
+        <h1 class="text-5xl font-bold leading-snug text-center md:text-6xl">{{ $page->title }}</h1>
 
-        <div class="flex justify-center items-center space-x-2 text-base md:text-lg font-mono uppercase text-gray-500 mt-4 font-semibold">
+        <div class="flex items-center justify-center mt-4 space-x-2 font-mono text-base font-semibold text-gray-500 uppercase md:text-lg">
             <p>{{ $page->author }}</p>
             <span class="w-1 h-1 bg-gray-700 rounded-full"></span>
             <time datetime="{{ $page->date }}">{{ date('F j, Y', $page->date) }}</time>

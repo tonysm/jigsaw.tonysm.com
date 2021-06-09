@@ -2,15 +2,15 @@
 
 @section('body')
     <a href="/"
-       class="back md:shadow-lg bg-white z-10 my-4 text-sm no-underline inline-block mx-auto text-center border border-gray-700 rounded-full px-4 py-2 md:fixed md:top-0 md:left-5">
+       class="z-10 inline-block px-4 py-2 mx-auto my-4 text-sm text-center no-underline bg-white border border-gray-700 rounded-full button-link back md:shadow-lg md:fixed md:top-0 md:left-5">
         ᐊ back to home
     </a>
 
     <div class="leading-relaxed">
-        <div class="max-w-6xl mx-auto pt-10 md:pt-36">
-            <h1 class="text-5xl md:text-6xl text-center font-bold mb-4">Hotwire & Laravel</h1>
+        <div class="max-w-6xl pt-10 mx-auto md:pt-36">
+            <h1 class="mb-4 text-5xl font-bold text-center md:text-6xl">Hotwire & Laravel</h1>
         </div>
-        <div class="max-w-2xl mx-auto content py-10 prose prose-lg">
+        <div class="max-w-2xl py-10 mx-auto prose prose-lg content">
             <p>I’ve been working on <a href="https://github.com/tonysm/turbo-laravel">Turbo Laravel</a> - a package that
                 bridges Hotwire with Laravel, and although I have done an <a href="https://youtu.be/qqLVbd_uGiI?t=171">introduction
                     to Hotwire</a> before, I didn't really dive into using the package itself (lol, right?). And I also
