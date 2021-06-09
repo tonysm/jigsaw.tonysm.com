@@ -13,8 +13,8 @@
 
             <section class="space-y-4">
                 <h2 class="mb-4 font-mono text-3xl font-semibold">$ cat /var/work.txt</h2>
-                <p>I'm working at <a href="https://tighten.co/">Tighten</a> as a Programmer (Full Stack).</p>
-                <p>I was previously working at <a href="https://worksitesafety.ca/">Worksite Safety</a> as a Lead PHP Developer, primarily with Laravel/PHP/Vue.</p>
+                <p>I work at <a href="https://tighten.co/">Tighten</a> as a Programmer (Full Stack).</p>
+                <p>I recently worked at <a href="https://worksitesafety.ca/">Worksite Safety</a> as a Lead PHP Developer, primarily with Laravel/PHP/Vue. I led a team of 3 other devs. We applied <a href="https://basecamp.com/shapeup/webbook">Shape Up</a>, so worked on the pitches, planned the Cycles, and even executed them, having 1-on-1s with the team, things like that. I also did an infrastructure migration, we moved a huge WordPress site from a single DO droplet to AWS using read/write replicas, S3, etc.</p>
                 <p>And before that, I worked at <a href="https://madewithlove.com/">madewithlove</a> as a Full-Stack
                     Software Engineer, and part-time DevOps for a bit more than 5 years. Built the most different kind
                     of projects: from content platforms, to booking websites, to real-estate systems, and even a bit of
