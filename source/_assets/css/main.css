@@ -24,7 +24,6 @@ mark:after {
 
 /* Links */
 a:not(.button-link) {
-    display: inline-block;
     text-decoration-line: underline;
     text-decoration-style: wavy;
     text-underline-offset: .1em;
@@ -34,7 +33,6 @@ a:not(.button-link) {
 a:hover:not(.button-link) {
     text-decoration-color: darkblue;
     color: darkblue;
-    transform: rotate(1deg) translateY(-.2em);
 }
 
 a.back:after {
