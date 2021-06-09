@@ -57,7 +57,7 @@
                     some of my past writings:</p>
                 <div class="space-y-6">
                     @foreach($posts as $post)
-                        <div class="p-6 space-y-4 border rounded-lg shadow-lg hover:shadow-xl">
+                        <div class="p-6 space-y-4 border rounded-lg shadow-lg post-card hover:shadow-xl">
                             <div class="text-center">
                                 <time datetime="{{ $post->date }}"
                                       class="text-sm text-gray-500">{{ date('F j, Y', $post->date) }}</time>
