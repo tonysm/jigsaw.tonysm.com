@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'baseUrl' => 'tonysm.com',
+    'baseUrl' => '',
     'production' => true,
 ];
