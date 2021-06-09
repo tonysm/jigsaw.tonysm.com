@@ -12,6 +12,7 @@
         <title>{{ $page->title }}</title>
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
         <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>
+        @yield('head')
     </head>
     <body class="font-sans text-lg antialiased leading-relaxed text-gray-900">
         <div class="px-4">

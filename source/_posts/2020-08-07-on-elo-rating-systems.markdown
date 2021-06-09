@@ -4,6 +4,7 @@ title: 'On Elo Rating Systems'
 date:   2020-08-07
 tags: elo ranking games php
 section: content
+excerpt: Elo Rating Systems can be used to make games fair and fun. Here's how to implement it in PHP.
 ---
 
 ![Elo Rating System at play in The Social Network movie](/assets/images/elo-rating-systems/social-network.jpeg)

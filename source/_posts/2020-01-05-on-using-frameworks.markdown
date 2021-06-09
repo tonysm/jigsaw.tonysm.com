@@ -4,6 +4,7 @@ title: 'On using Frameworks'
 date:   2020-01-05
 tags: laravel frameworks
 section: content
+excerpt: There is something about Frameworks that seems to enrage some people. Here's my view on why you will be better of by using a Framework and sticking to its conventions.
 ---
 
 I'm a huge fan of frameworks. Particularly the Full-Stack ones. My framework of choice (and the one I use daily) is [Laravel](https://laravel.com/). It has a really powerful ecosystem for writing modern applications in PHP.
@@ -22,7 +23,7 @@ When it comes to software, I like to think that there are many solutions to the 
 
 Frameworks provide the building blocks you can use to write your own stories in the form of software. And, given that there are many different solutions to the same problem, you can pick the ones that better fit the building blocks you are given by sticking to the frameworks' conventions.
 
-It's not like the framework "limits" you. Quite the contrary: it empowers you. Not just you, your team too. Especially the small teams (but also big teams!).
+It's not like the framework "limits" you. Quite the contrary: it empowers you. Not just you, but your team too. Especially small teams (but also big teams!).
 
 To build a modern application these days, you need a lot of powerful building blocks. We are not talking about sending e-mails, submitting forms, and things like that. Think highly interactive applications: background jobs, notifications, Web Sockets, etc.
 

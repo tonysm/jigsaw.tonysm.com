@@ -4,6 +4,7 @@ title: 'Top lessons for startups'
 date:   2020-01-05
 tags: startups lessons getting-real
 section: content
+excerpt: Here's some tips I would give to someone building a startup today.
 ---
 
 > We've worked for a lot of different companies. What is the top lesson we can share with startups that we've learned from our experience?

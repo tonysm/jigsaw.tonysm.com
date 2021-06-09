@@ -1,9 +1,10 @@
 ---
 extends: _layouts.post
-title: 'Infinite Scrolling with Inertia.js'
+title: 'Infinite Scrolling with Inertia.JS'
 date:   2020-09-18
 tags: laravel inertiajs vue
 section: content
+excerpt: Here's how to implement Infinite Scrolling with Inertia.JS.
 ---
 
 A while ago [I wrote an introduction to Inertia.js](https://madewithlove.com/introduction-to-inertia-js/) article showing how it enables building modern monolith applications that wants to use a JavaScript framework as the rendering engine instead of your regular server-rendered HTML templating engine, such as Laravel's Blade or Rails' ERBs.
@@ -321,7 +322,7 @@ class ChatRoomMessagesController extends Controller
       request()->user(),
       request()->input('message.content')
     );
-    
+
     return Inertia\Inertia::appendProps([
       'messages' => [$message],
     ]);

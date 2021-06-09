@@ -4,6 +4,7 @@ title: 'On Serverless and Monoliths'
 date:   2020-02-12
 tags: laravel vapor serverless monoliths
 section: content
+excerpt: Some folks see Severless as the end of the Monolith. Quite the contrary. Here's how Laravel Vapor makes it easy to breakdown a Laravel application in 3 functions (Web, Queue, and CLI) to deploy to AWS Lambda.
 ---
 
 I've just read the article "[The Serverless Supremacy: The fall of the Monolith](https://blog.webiny.com/the-serverless-supremacy-204fbf5add75?gi=c634008b1d6d)" and wanted to share my thoughts here real quick.

@@ -4,6 +4,7 @@ title: "On SaaS Boilerplates"
 date:   2020-12-11
 tags: jetstream saas boilerplate
 section: content
+excerpt: I tried to explain why it's so much simpler to adopt a SaaS boilerplate such as Jetstream instead of rolling your own.
 ---
 
 I tried to explain why it's so much simpler to adopt a SaaS boilerplate such as [Jetstream](https://jetstream.laravel.com/1.x/introduction.html) instead of rolling your own, but apparently I failed. I'm not sure if I did a bad job at explaining or what. So here's another attempt.

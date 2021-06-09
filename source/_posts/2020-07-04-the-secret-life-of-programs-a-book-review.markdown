@@ -4,6 +4,7 @@ title: 'The Secret Life of Programs (a book review?)'
 date:   2020-07-04
 tags: book programs
 section: content
+excerpt: I wanted to write about this book because it really got me thinking about my experience and my relationship with computers. Here's a review.
 ---
 
 I wanted to write about this book because it really got me thinking about my experience and my relationship with computers. I feel like this is going to be a bit personal, but I'm not entirely sure how this will end up.

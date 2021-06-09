@@ -4,6 +4,7 @@ title: 'Declarative Infrastructure and Application Releases'
 date:   2019-07-07
 tags: laravel docker kubernetes terraform declarative devops
 section: content
+excerpt: Containers have been in hype for quite some time. Orchestrators have enabled us to shift the way we deploy. In this article, we're exploring that and going a bit further by also setting up our infrastructure in a declarative way using HashiCorp's Terraform.
 ---
 
 [Containers](https://www.docker.com/resources/what-container) have been in the hype for quite some time now and [Orchestrators](https://kubernetes.io/en/) have enabled us to shift the way we deploy software from task runners to something more declarative way. In this article, we are exploring that and going a bit further by also setting up our infrastructure in a declarative way using HashiCorp's [Terraform](https://www.terraform.io/).
@@ -25,7 +26,7 @@ mkdir php-terraform-kubernetes-example/
 Great! From now on, we are calling this folder the root path.
 
 Now, let's create the World's simplest PHP application. Add an index.php file under <root>/app/public/ and paste the following code:
-  
+
 ```php
 <html lang="en">
    <head>
@@ -39,7 +40,7 @@ Now, let's create the World's simplest PHP application. Add an index.php file un
 ```
 
 Since having PHP installed wasn't a requirement, we are going to use Docker to test this application. For that, let's create the World's worst PHP Dockerfile. Create a Dockerfile inside `<root>/app/` with the following content:
-  
+
 ```dockerfile
 FROM php:7.3
 
@@ -58,7 +59,7 @@ This Dockerfile describes how we want our Docker image to look like. It contains
 - **CMD ...**: This is the default command that the container will run. We can override this at runtime, but that's out of the scope of this article.
 
 Alright, with that covered, let's build our custom Docker image by running the following command:
-  
+
 ```bash
 docker build -t tonysm/demo-php-app:0.0.1 -f app/Dockerfile ./app
 Sending build context to Docker daemon 3.584kB
@@ -78,11 +79,11 @@ Successfully tagged tonysm/terraform-k8s-demo-app:0.0.1
 ```
 
 Here's a poor explanation of what is going on here:
-  
+
 ![Explanation of the Docker build command](/assets/images/declarative-infrastructure/docker-build.png)
-  
+
 Great. Our image was successfully built. You can find your Docker image in your local images with the following command:
-  
+
 ```bash
 docker image ls | grep tonysm/terraform
 tonysm/terraform-k8s-demo-app                 0.0.1                   e522d9fbc93b       5 seconds ago      367MB
@@ -105,24 +106,24 @@ Now that you have an account in Docker Hub, you also need to authenticate you lo
 ```bash
 docker push tonysm/terraform-k8s-demo-app:0.0.1
 The push refers to repository [docker.io/tonysm/terraform-k8s-demo-app]
-0e017f123496: Pushed 
-5bcce6289196: Pushed 
-5e63a0adbe83: Mounted from tonysm/dummy-php-image 
-82c280d40dc6: Mounted from tonysm/dummy-php-image 
-07886e8b1870: Mounted from tonysm/dummy-php-image 
-e01f9f2bc3a7: Mounted from tonysm/dummy-php-image 
-4625f667b473: Mounted from tonysm/dummy-php-image 
-0318b3b010ef: Mounted from tonysm/dummy-php-image 
-d7b30b215a88: Mounted from tonysm/dummy-php-image 
-9717e52dd7bd: Mounted from tonysm/dummy-php-image 
-cf5b3c6798f7: Mounted from tonysm/dummy-php-image 
+0e017f123496: Pushed
+5bcce6289196: Pushed
+5e63a0adbe83: Mounted from tonysm/dummy-php-image
+82c280d40dc6: Mounted from tonysm/dummy-php-image
+07886e8b1870: Mounted from tonysm/dummy-php-image
+e01f9f2bc3a7: Mounted from tonysm/dummy-php-image
+4625f667b473: Mounted from tonysm/dummy-php-image
+0318b3b010ef: Mounted from tonysm/dummy-php-image
+d7b30b215a88: Mounted from tonysm/dummy-php-image
+9717e52dd7bd: Mounted from tonysm/dummy-php-image
+cf5b3c6798f7: Mounted from tonysm/dummy-php-image
 0.0.1: digest: sha256:27f939f99c2d57ca690a5afdc8de2afe0552b851d0c38213603addd1f6bba323 size: 2616
 ```
 
 In my case, some of the steps were already present in another image in my user account, so Docker knows that and doesn't have to push the same layers again. If you open your profile on Docker Hub, the image will be there, _publicly available to anyone_:
 
 ![Image is public in Docker Hub](/assets/images/declarative-infrastructure/image-is-published-on-docker-hub.png)
-  
+
 Great. Now, let's create our Kubernetes Cluster.
 
 ## Terraforming Infrastructure on DigitalOcean
@@ -324,7 +325,7 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 Cool. Now, let's deploy our application on this Kubernetes Cluster.
 
 ## Deploying on Kubernetes
-  
+
 We already have our image on Docker Hub (our registry), so we only have to create our Kubernetes Objects' manifests. If you are new to Kubernetes, I did an attempt to explain what these are in this [blogpost](https://madewithlove.com/kubernetes-101-the-basics/), but also check the [docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/).
 
 For our application, we will need:
@@ -413,7 +414,7 @@ Now, if you open [159.203.156.203](http://159.203.156.203) on your browser, you 
 ![Application running on Digital Ocean](/assets/images/declarative-infrastructure/app-running-digital-ocean-01.png)
 
 If you refresh, you can see the hostname changed!
-  
+
 ![Hostname changed](/assets/images/declarative-infrastructure/hostname-changed.png)
 
 This is because we have 2 replicas of the POD running in the cluster, as you can see with the following command:
@@ -430,7 +431,7 @@ Pretty cool, right?!
 ## Cleaning up
 
 You probably don't want to keep this running on your DigitalOcean account, so let's clean up. First of all, let's delete the things we create via Kubernetes:
-  
+
 ```bash
 kubectl delete -f k8s/
 deployment.apps "webapp-web-deployment" deleted

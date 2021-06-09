@@ -4,6 +4,7 @@ title: 'On OOP and Active Record'
 date:   2020-02-07
 tags: activerecord oop
 section: content
+excerpt: Is an Active Record ORM always in conflict with OOP? I don't think so, but here are some thoughts I heard from Sandi Metz (in talks/podcasts) and then my take on it.
 ---
 
 I'm a huge fan o [Sandi Metz](https://twitter.com/sandimetz), I have watched some of her recorded talks multiple times, the most recent one was called "[Polly want a message](https://www.youtube.com/watch?v=XXi_FBrZQiU)" and it's also my favorite so far (if this is a reference to a Nirvana song, I like it even more).
@@ -30,7 +31,7 @@ app/models
 └── reconcilable_charges.rb
 ```
 
-We have the Active Record models inside the "models/ar" folder, while the domain classes living outside. Some people call these "service objects", or "interactors", you name it. 
+We have the Active Record models inside the "models/ar" folder, while the domain classes living outside. Some people call these "service objects", or "interactors", you name it.
 
 The point is: these classes form the domain of the application. They are the ones talking to the Active Record models. But they can do much more than that.
 

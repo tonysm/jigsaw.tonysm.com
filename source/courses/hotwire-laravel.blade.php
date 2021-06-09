@@ -1,5 +1,12 @@
 @extends('_layouts.main')
 
+@section('head')
+    @include('_partials.social', [
+        'title' => 'Hotwire & Laravel (course)',
+        'description' => "Learn how Turbo works and how to implement it in Laravel. You'll also see how Turbo Native works.",
+    ])
+@endsection
+
 @section('body')
     <a href="/"
        class="z-10 inline-block px-4 py-2 mx-auto my-4 text-sm text-center no-underline bg-white border border-gray-700 rounded-full button-link back md:shadow-lg md:fixed md:top-0 md:left-5">

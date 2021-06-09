@@ -4,6 +4,7 @@ title: 'True hybrid mobile applications with Turbolinks'
 date:   2020-03-28
 tags: turbolinks mobile hybrid
 section: content
+excerpt: There are a couple ways to build "hybrid" mobile applications. Turbolinks (now Turbo) is perhaps the most unique ones I've seen out there, but yet one of the less talked about. Here's an introduction.
 ---
 
 In this video, I want to cover one aspect of using Turbolinks that I think it's not shared enough. Turbolinks has mobile bridges that make it really easy to wrap your existing web applications in a real native shell application, having some real mobile navigation and behaviors on top of your web content.

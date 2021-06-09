@@ -4,6 +4,7 @@ title: Using Laravel WebSockets package (Video)
 date:   2018-04-12
 tags: laravel websockets
 section: content
+excerpt: Here's a video where I demo how to use the Laravel WebSockets package.
 ---
 
 This is a short introduction to using a recently released package called [Laravel WebSockets](https://docs.beyondco.de/laravel-websockets/) as a replacement for Pusher. Hope you like it.

@@ -1,5 +1,12 @@
 @extends('_layouts.main')
 
+@section('head')
+    @include('_partials.social', [
+        'title' => 'Tony Messias',
+        'description' => "Hey, there. I'm a programer from Brazil. This is my personal website and blog.",
+    ])
+@endsection
+
 @section('body')
     <div class="leading-relaxed">
         <div class="max-w-6xl pt-10 mx-auto md:pt-36">

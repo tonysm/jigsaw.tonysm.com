@@ -4,6 +4,7 @@ title: 'Integrating Elasticsearch with your Laravel app (2019)'
 date:   2019-08-28
 tags: laravel search elasticsearch
 section: content
+excerpt: Integrating Elastic with Laravel used to be tricky. Here's an overview on how to do that.
 ---
 
 Searching is an important part of many applications, and it sometimes is treated as a simple task. "Just query using LIKE and you're good to go". While the _LIKE_ clause can be handy, sometimes we have to do some more complex queries.

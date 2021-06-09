@@ -4,6 +4,7 @@ title: 'Premature optimization is the root of all evil...'
 date:   2020-08-23
 tags: optimization fallacies
 section: content
+excerpt: Optimizations don't always equal to great improvements. First, measure it. Then, optimize if necessary.
 ---
 
 You might have read this quote before. This is actually only part of the real quote, which [was](https://en.wikiquote.org/wiki/Donald_Knuth):

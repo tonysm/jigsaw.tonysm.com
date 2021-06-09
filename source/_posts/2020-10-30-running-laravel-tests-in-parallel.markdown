@@ -4,9 +4,10 @@ title: "Running Laravel Feature Tests in Parallel with Paratest"
 date:   2020-10-30
 tags: laravel testing
 section: content
+excerpt: Here's how to use Paratest to run Tests in Parallel with Laravel.
 ---
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Pretty neat to see the Rails parallel test runner peg all cores and hyperthreads on my 8-core iMac. 10,000 assertions across 2,000 tests completing in 1 minute, 29 seconds. No fancy magic! All hitting the Dockerized DB. (This is for a 0.8 test ratio on an app that&#39;s 25KLOC.) <a href="https://t.co/59xCf1lMp6">pic.twitter.com/59xCf1lMp6</a></p>&mdash; DHH (@dhh) <a href="https://twitter.com/dhh/status/1321829617867653126?ref_src=twsrc%5Etfw">October 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Pretty neat to see the Rails parallel test runner peg all cores and hyperthreads on my 8-core iMac. 10,000 assertions across 2,000 tests completing in 1 minute, 29 seconds. No fancy magic! All hitting the Dockerized DB. (This is for a 0.8 test ratio on an app that&#39;s 25KLOC.) <a href="https://t.co/59xCf1lMp6">pic.twitter.com/59xCf1lMp6</a></p>&mdash; DHH (@dhh) <a href="https://twitter.com/dhh/status/1321829617867653126?ref_src=twsrc%5Etfw">October 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Ever since I saw that Rails 6 was shipping with a parallel test runner I got curious if we couldn't have something like this for Laravel and PHPUnit.
 

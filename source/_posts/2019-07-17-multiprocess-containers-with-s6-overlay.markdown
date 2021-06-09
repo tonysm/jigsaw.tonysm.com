@@ -4,6 +4,7 @@ title: 'Multiprocess Containers with S6 Overlay'
 date:   2019-07-17
 tags: laravel docker pid process container s6overlay
 section: content
+excerpt: Containers are supposed to run a single process. Sometimes you need more than that. Here's how to use S6 Overlay to achieve that.
 ---
 
 Note: I originally wrote this article as an introduction to S6 Overlay in the internal blog at [madewithlove](https://madewithlove.com/).

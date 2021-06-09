@@ -4,6 +4,7 @@ title: 'Reddit''s "hotness" algorithm'
 date:   2020-08-07
 tags: reddit algorithm laravel eloquent
 section: content
+excerpt: Reddit's "hotness" Algorithm can be used in web applications to generate the feeling of "trends" in many different scenarios. Here's how to implement it in Laravel with Eloquent and a Relational Database.
 ---
 
 I long time ago I was working on a location-based social network. We basically divided the World into groups according to the demographics of the region (crowded places would have more, smaller groups). Inside a group, you have many different "topics" (that's not what we called all this, it's just an example so you get a general idea).

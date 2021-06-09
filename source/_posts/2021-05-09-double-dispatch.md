@@ -4,6 +4,7 @@ title: 'Double Dispatch'
 date:   2021-05-09
 tags: patterns visitor double-dispatch
 section: content
+excerpt: The computation of a method call depends only on the receiver of the message. However, sometimes messages can depend on multiple Objects.
 ---
 
 I have been reading the book "Smalltalk Best Practice and Patterns", so I'm going to share some cool patterns in this blog. I shared this on Twitter:

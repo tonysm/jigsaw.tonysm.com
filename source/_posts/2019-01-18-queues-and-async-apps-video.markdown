@@ -4,6 +4,7 @@ title: 'Queues and Async Apps (Video)'
 date:   2019-01-18
 tags: laravel queues background-jobs
 section: content
+excerpt: Laravel ships with a built-in Queue component that allows you to defer processing to a background job. Combined with the Broadcasting component, you get a really great async experience.
 ---
 
 Right after I posted the [video](https://www.youtube.com/watch?v=GtphrhnFwZQ) where I introduce the [Laravel WebSockets Package](https://beyondco.de/docs/laravel-websockets/getting-started/introduction), I got a request to maybe talk more about a preview of an old talk I had on my YouTube channel. So I decided to record it and share it.

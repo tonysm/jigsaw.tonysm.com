@@ -4,6 +4,7 @@ title: 'Kubernetes 101'
 date:   2018-08-25
 tags: kubernetes
 section: content
+excerpt: I took some notes while I was learning Kurbernetes. Here's the introduction I wish I had.
 ---
 
 I took some notes while I was learning Kubernetes, added more content to it after my experiments and it resulted in an article that covers the basics, like lingo (naming of things in the Kubernetes World), architecture of a Kubernetes cluster. I also work through deploying a demo Laravel application in a Kubernetes environment.

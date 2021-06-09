@@ -4,6 +4,7 @@ title: "Cloud Native Buildpacks: Docker Images without a Dockerfile"
 date:   2020-12-19
 tags: laravel docker cloudnative buildpacks heroku
 section: content
+excerpt: Building Docker images can be tricky. But it doesn't have to be.
 ---
 
 ## TL;DR
@@ -51,7 +52,7 @@ Containers might feel intimidating at a first sight, but it really isn't that co
 
 A container is another way to package your application for distribution. It's kinda like when we used to zip our applications, send to a server, unzip it there, and run (\*cough, cough\* lambda, \*cough, cough\*). It's like a zip file or a tarball, but one where you can also add instructions on how to run the application.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">All this fuss over fetching a tarball and executing the contents.</p>&mdash; Kelsey Hightower (@kelseyhightower) <a href="https://twitter.com/kelseyhightower/status/771043214266597376?ref_src=twsrc%5Etfw">August 31, 2016</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">All this fuss over fetching a tarball and executing the contents.</p>&mdash; Kelsey Hightower (@kelseyhightower) <a href="https://twitter.com/kelseyhightower/status/771043214266597376?ref_src=twsrc%5Etfw">August 31, 2016</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Docker Images
 
