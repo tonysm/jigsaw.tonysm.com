@@ -82,11 +82,11 @@
 
             <p>I thought of writing a longer version of an introduction to the package itself (some kind of Getting
                 Started), but I think that both the <a href="https://turbo.hotwire.dev/handbook/introduction">Turbo
-                    Handbook</a> and the <a href="https://github.com/tonysm/turbo-laravel/tree/main/docs">Turbo Laravel
+                    Handbook</a> and the <a href="https://github.com/tonysm/turbo-laravel">Turbo Laravel
                     documentation</a> really covers a lot of what is possible. So, for now, I’ll just reference them.
             </p>
 
-            <p>I hope you enjoy the videos and let me know if I said something wrong.</p>
+            <p>I hope you enjoy the videos. Please, let me know if I said something wrong.</p>
         </div>
     </div>
 @endsection
