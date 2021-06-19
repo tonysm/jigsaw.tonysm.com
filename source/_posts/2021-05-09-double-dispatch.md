@@ -116,7 +116,7 @@ class IntegerNumber
 }
 ```
 
-If we run the first test, it should still pass. That's because we're adding two instances of the `IntegerNumber` class. The receiber of the `add()` message will call the `addInteger` on the argument and pass itself to it. At that point, we have two integer primitives, so we can return a new instance summing the primitives.
+If we run the first test, it should still pass. That's because we're adding two instances of the `IntegerNumber` class. The receiver of the `add()` message will call the `addInteger` on the argument and pass itself to it. At that point, we have two integer primitives, so we can return a new instance summing the primitives.
 
 Now, let's make a similar change to the `FloatNumber` class:
 
