@@ -139,7 +139,7 @@ class FloatNumber
 
 Our first two tests should be passing now. Nice! Let's now add the cross methods. First, an integer only knows how to add other integers (primitives). Similarly, floats should only know how to add their own primitives. However, integers should be able to convert themselves to floats and vice-versa. This will allow us to add floats and integers together.
 
-When a _Float Number_ instance receives the `add()` message with an instance of the `IntegerNumber` class, it will call the `addFloat` on the argument, and pass itself to it. So we need an `addFloat(FloatNumber $number)` method on the `IntegerNumber` class. As we discussed, an `IntegerNumber` number doesn't know how to sum floats, but it knows how to convert itself to a float. And who knows how to add two floats together? The `FloatNumber` instance! So, at that point, the `IntegerNumber` instance will cast itself to Float and call the `addFloat()` on the float number instance with that. Then, the float number does the primiting addition and returns a new instance of a `FloatNumber`.
+When a _Float Number_ instance receives the `add()` message with an instance of the `IntegerNumber` class, it will call the `addFloat` on the argument, and pass itself to it. So we need an `addFloat(FloatNumber $number)` method on the `IntegerNumber` class. As we discussed, an `IntegerNumber` number doesn't know how to sum floats, but it knows how to convert itself to a float. And who knows how to add two floats together? The `FloatNumber` instance! So, at that point, the `IntegerNumber` instance will cast itself to Float and call the `addFloat()` on the float number instance with that. Then, the float number does the primitive addition and returns a new instance of a `FloatNumber`.
 
 Similarly, when an _Integer Number_ instance receives the `add()` message with an instance of a `FloatNumber` class, it will call `addInteger` on it, passing itself to it. Then, the _Float Number_ will cast itself to an integer and pass that back to the integer calling `addInteger`. Again, at that point, Integer can do the primitive addition and return a new instance of an `IntegerNumber` class.
 
@@ -273,7 +273,7 @@ class UssVoyager
 }
 ```
 
-Our tests should be green now. Uhm... it looks weird, right? Let's add another enemy and see if it this design still works. Our new enemy is a Borg Cube. Borgs will assimilate any spaceship (resistance is futile.)
+Our tests should be green now. Uhm... it looks weird, right? Let's add another enemy and see if it this design still works. Our new enemy is a Borg Cube. Borgs will assimilate any spaceship (resistance is futile).
 
 Let's start with a test for the Shuttle facing the Borg Cube:
 
