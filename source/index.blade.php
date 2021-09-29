@@ -55,24 +55,26 @@
                 <p>Writing is how we consolidate our learnings. I'm currently experimenting with
                     <a href="https://world.hey.com/tonysm">HEY World</a>, so check that out for new posts. Here's
                     some of my past writings:</p>
-                <div class="space-y-6">
+                <div class="pt-4 space-y-6">
                     @foreach($posts as $post)
-                        <div class="p-6 space-y-4 border rounded-lg shadow-lg post-card hover:shadow-xl">
-                            <div class="text-center">
-                                <time datetime="{{ $post->date }}"
-                                      class="text-sm text-gray-500">{{ date('F j, Y', $post->date) }}</time>
+                        <a class="block no-underline" href="{{ $post->getUrl() }}">
+                            <div class="p-6 space-y-4 border rounded-lg shadow-lg post-card hover:shadow-xl">
+                                <div class="text-center">
+                                    <time datetime="{{ $post->date }}"
+                                        class="text-sm text-gray-500">{{ date('F j, Y', $post->date) }}</time>
 
-                                <h3 class="text-3xl font-bold">{{ $post->title }}</h3>
+                                    <h3 class="text-3xl font-bold">{{ $post->title }}</h3>
+                                </div>
+
+                                <p>{{ strip_tags(\Illuminate\Support\Str::limit($post->getContent(), 300)) }}</p>
+
+                                <div class="text-center">
+                                    <span
+                                    class="inline-block px-4 py-2 mx-auto text-sm no-underline border rounded-full button-link back hover:shadow-lg">Read
+                                        more</span>
+                                </div>
                             </div>
-
-                            <p>{{ strip_tags(\Illuminate\Support\Str::limit($post->getContent(), 300)) }}</p>
-
-                            <div class="text-center">
-                                <a href="{{ $post->getUrl() }}"
-                                   class="inline-block px-4 py-2 mx-auto text-sm no-underline border rounded-full button-link back hover:shadow-lg">Read
-                                    more</a>
-                            </div>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
                 <p>

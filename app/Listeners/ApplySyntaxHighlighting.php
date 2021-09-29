@@ -35,7 +35,8 @@ class ApplySyntaxHighlighting
                 'php',
                 'css',
                 'js',
-                'shell'
+                'shell',
+                'blade',
             ]);
             $input = htmlspecialchars_decode($match[0]);
 

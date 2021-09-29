@@ -32517,7 +32517,7 @@ mark:after {
 
 /* Links */
 
-a:not(.button-link) {
+a:not(.button-link):not(.no-underline) {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
   -webkit-text-decoration-style: wavy;
@@ -32526,7 +32526,7 @@ a:not(.button-link) {
   text-decoration-thickness: .04em;
 }
 
-a:hover:not(.button-link) {
+a:hover:not(.button-link):not(.no-underline) {
   -webkit-text-decoration-color: darkblue;
           text-decoration-color: darkblue;
   color: darkblue;

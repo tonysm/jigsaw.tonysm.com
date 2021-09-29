@@ -23,14 +23,14 @@ mark:after {
 }
 
 /* Links */
-a:not(.button-link) {
+a:not(.button-link):not(.no-underline) {
     text-decoration-line: underline;
     text-decoration-style: wavy;
     text-underline-offset: .1em;
     text-decoration-thickness: .04em;
 }
 
-a:hover:not(.button-link) {
+a:hover:not(.button-link):not(.no-underline) {
     text-decoration-color: darkblue;
     color: darkblue;
 }
