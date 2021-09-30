@@ -33,7 +33,7 @@
         </div>
 
         <footer class="p-8">
-            <p class="text-sm text-center text-gray-600">Code highlighting provided by <a href="https://torchlight.dev/">Torchlight</a>.</p>
+            <p class="text-sm text-center text-gray-600">Powered by <a href="https://jigsaw.tighten.co/">Jigsaw</a>. Code highlighting by <a href="https://torchlight.dev/">Torchlight</a>.</p>
         </footer>
     </body>
 </html>
