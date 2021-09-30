@@ -4,7 +4,7 @@
         "dev": "mix",
         "watch": "mix watch",
         "staging": "NODE_ENV=staging mix",
-        "prod": "mkdir build_production/ && mix --production"
+        "prod": "mix --production"
     },
     "devDependencies": {
         "@tailwindcss/typography": "^0.4.0",
