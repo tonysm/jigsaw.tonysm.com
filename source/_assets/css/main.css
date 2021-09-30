@@ -62,24 +62,6 @@ pre code::selection { @apply bg-blue-600; }
     aspect-ratio: 16 / 9;
 }
 
-/** Code */
-
-.prose pre {
-    @apply shadow-lg;
-}
-
-pre code {
-    border: 3px dotted rgb(197, 219, 232);
-    font-family: MonoLisa, "Operator Mono", "IBM Plex", "JetBrains Mono", monospace;
-    font-size: 14px;
-}
-
-div.highlighter-rouge code {
-    display: block;
-    overflow-x: auto;
-    padding: 1rem;
-}
-
 blockquote {
     font-style: italic;
     border: thin solid black;
@@ -90,4 +72,8 @@ blockquote p { margin: 0; }
 
 .post-card:hover {
     transform: rotate(1deg) translateY(-.2em);
+}
+
+.line-number {
+    padding-right: 1.5em;
 }

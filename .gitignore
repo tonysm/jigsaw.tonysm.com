@@ -1,6 +1,7 @@
 /build_local/
 /build_production/
 /cache/
+/torchlight_cache/
 /node_modules/
 /vendor/
 /.idea/

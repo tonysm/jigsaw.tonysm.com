@@ -31,5 +31,9 @@
         <div class="px-4">
             @yield('body')
         </div>
+
+        <footer class="p-8">
+            <p class="text-sm text-center text-gray-600">Code highlighting provided by <a href="https://torchlight.dev/">Torchlight</a>.</p>
+        </footer>
     </body>
 </html>
