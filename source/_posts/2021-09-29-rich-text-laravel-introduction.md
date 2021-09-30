@@ -7,7 +7,17 @@ section: content
 excerpt: Version 1.0.0 of the Rich Text Laravel package was released. Let's play with it. We're going to convert an application that currently uses a simple textarea field into using Trix, including migrating the existing data to the suggested database structure.
 ---
 
-Version 1.0.0 of the [Rich Text Laravel package](https://github.com/tonysm/rich-text-laravel) was released last week and I wanted to work on some content to showcase the package. So, let's dive right in.
+Version 1.0.0 of the [Rich Text Laravel package](https://github.com/tonysm/rich-text-laravel) was released last week and I wanted to work on some content to showcase the package.
+
+If you prefer video, I've recording a tutorial based on this post:
+
+<div class="embed-responsive">
+    <iframe src="https://www.youtube.com/embed/VX4-4iWnGIo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen="" frameborder="0"></iframe>
+</div>
+
+So, let's dive right in.
 
 ## The Demo App
 
