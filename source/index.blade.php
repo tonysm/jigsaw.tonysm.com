@@ -30,11 +30,31 @@
                             web applications with Laravel and whatever frontend stack the project needs or already uses.</p>
                     </section>
                     <section>
-                        <h3>Creator of Turbo Laravel</h3>
-                        <p>Lately I've been diving into <a href="https://hotwired.dev/">Hotwire</a> and I built the <a
-                                href="https://github.com/tonysm/turbo-laravel">Turbo Laravel</a> package to make the most out
-                            of
-                            Hotwire in Laravel.</p>
+                        <h2>Open-Source Work</h2>
+                        <p>I've a couple of open-source packages you may be interesting in checking out. I've been trying to brige the Rails and Laravel Worlds a little bit.</p>
+
+                        <article>
+                            <h3>Creator of Turbo Laravel</h3>
+                            <p>Lately I've been diving into <a href="https://hotwired.dev/">Hotwire</a> and I built the <a
+                                    href="https://github.com/tonysm/turbo-laravel">Turbo Laravel</a> package to make the most out
+                                of
+                                Hotwire in Laravel.</p>
+                        </article>
+
+                        <article>
+                            <h3>Creator of Importmap Laravel</h3>
+                            <p><a href="https://github.com/tonysm/importmap-laravel">Importmap Laravel</a> is an alternative to working with JavaScript in your Laravel apps without the need for Node.js or a bundler (such as Vite or webpack).</p>
+                        </article>
+
+                        <article>
+                            <h3>Creator of TailwindCSS Laravel</h3>
+                            <p><a href="https://github.com/tonysm/tailwindcss-laravel">TailwindCSS Laravel</a> is a wrapper around the Tailwind CLI, which the Tailwind Labs team built. With this package, you can keep using TailwindCSS in your Laravel apps without a bundler (such as Vite or webpack).</p>
+                        </article>
+
+                        <article>
+                            <h3>Creator of Rich Text Laravel</h3>
+                            <p><a href="https://github.com/tonysm/rich-text-laravel">Rich Text Laravel</a> is the backend portion for the <a href="https://trix-editor.org/">Trix editor</a>.</p>
+                        </article>
                     </section>
                     <section>
                         <h2>Courses and Screencasts</h2>
