@@ -12,10 +12,9 @@
         ᐊ back to home
     </a>
 
-    <div class="leading-relaxed">
-        <div class="max-w-6xl pt-10 mx-auto md:pt-36">
-            <h1 class="mb-4 text-5xl font-bold text-center md:text-6xl">Kubernetes for Laravel Developers</h1>
-        </div>
+    <div class="prose prose-xl mx-auto pt-10 md:pt-36 ">
+        <h1 class="text-center">Kubernetes for Laravel Developers</h1>
+
         <div class="max-w-2xl py-10 mx-auto prose prose-lg content">
             <p>In this video series, I’m going to show you how I wrap a Laravel application in containers to deploy it
                 to a Kubernetes cluster.</p>

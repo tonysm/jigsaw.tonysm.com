@@ -27,13 +27,13 @@
         <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>
         @yield('head')
     </head>
-    <body class="font-sans text-lg antialiased leading-relaxed text-gray-900">
+    <body class="antialiased">
         <div class="px-4">
             @yield('body')
         </div>
 
-        <footer class="p-8">
-            <p class="text-sm text-center text-gray-600">Powered by <a href="https://jigsaw.tighten.co/">Jigsaw</a>. Code highlighting by <a href="https://torchlight.dev/">Torchlight</a>.</p>
+        <footer class="prose prose-sm mx-auto text-center my-8">
+            <p class="">Powered by <a href="https://jigsaw.tighten.co/">Jigsaw</a>. Code highlighting by <a href="https://torchlight.dev/">Torchlight</a>.</p>
         </footer>
     </body>
 </html>
