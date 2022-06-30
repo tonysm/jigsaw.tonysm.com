@@ -15,7 +15,7 @@
     <div class="prose prose-xl mx-auto pt-10 md:pt-36 ">
         <h1 class="text-center">Kubernetes for Laravel Developers</h1>
 
-        <div class="max-w-2xl py-10 mx-auto prose prose-lg content">
+        <div class="py-10 mx-auto prose prose-lg content">
             <p>In this video series, I’m going to show you how I wrap a Laravel application in containers to deploy it
                 to a Kubernetes cluster.</p>
 
