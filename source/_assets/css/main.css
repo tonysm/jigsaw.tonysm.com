@@ -53,6 +53,15 @@ img, .twitter-tweet {
 pre code::-moz-selection { @apply bg-blue-600; }
 pre code::selection { @apply bg-blue-600; }
 
+*:not(pre) > code {
+    @apply bg-gray-300 bg-opacity-40 shadow-sm rounded px-1 mx-1 py-0.5 -my-0.5;
+}
+
+*:not(pre) > code::before,
+*:not(pre) > code::after {
+    content: '' !important;
+}
+
 .embed-responsive {
     @apply w-full;
 }
@@ -62,18 +71,6 @@ pre code::selection { @apply bg-blue-600; }
     aspect-ratio: 16 / 9;
 }
 
-blockquote {
-    font-style: italic;
-    border: thin solid black;
-    padding: 1rem;
-}
-
-blockquote p { margin: 0; }
-
 .post-card:hover {
     transform: rotate(1deg) translateY(-.2em);
-}
-
-.line-number {
-    padding-right: 1.5em;
 }

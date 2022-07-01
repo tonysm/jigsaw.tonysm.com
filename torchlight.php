@@ -6,7 +6,7 @@ return [
     'theme' => 'material-theme-palenight',
 
     // Your API token from torchlight.dev. You can set it as an ENV variable
-    // (shown below), or just hardcode it if your repo is private.  
+    // (shown below), or just hardcode it if your repo is private.
     'token' => getenv('TORCHLIGHT_API_TOKEN'),
 
     // If you want to register the blade directives, set this to true.
@@ -19,17 +19,17 @@ return [
     // that you should *not* use the same path that Jigsaw uses,
     // which is `cache` at the root level of your app.
     'cache_path' => 'torchlight_cache',
-    
-    // Because of the way Jigsaw works as a static site generator, all the 
-    // code blocks for your entire site will be sent as one request. We 
+
+    // Because of the way Jigsaw works as a static site generator, all the
+    // code blocks for your entire site will be sent as one request. We
     // increase the timeout to 15 seconds to cover for that.
     'request_timeout' => 15,
-    
+
     // Global options to control blocks-level settings.
     // https://torchlight.dev/docs/options
     'options' => [
         // Turn line numbers on or off globally.
-        'lineNumbers' => true,
+        'lineNumbers' => false,
 
         // Control the `style` attribute applied to line numbers.
         // 'lineNumbersStyle' => '',
