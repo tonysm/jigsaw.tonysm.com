@@ -296,7 +296,7 @@ Route::post('attachments', function () {
 })->name('attachments.store');
 ```
 
-Now, we're also returning a `attachable_sgid` field with the `image_url`. `SGID` is short for Signed Global IDs, which are essentually a string key that may represent any model (or object) in our application. You can think of it as a URL for your models. It's provided by the [GlobaliD Laravel](https://github.com/tonysm/globalid-laravel) package, which the Rich Text Laravel package uses under the hood. That should be added to the Trix attachment in the front-end. Our final version there should be something like this:
+Now, we're also returning a `attachable_sgid` field with the `image_url`. `SGID` is short for Signed Global IDs, which are essentually a string key that may represent any model (or object) in our application. You can think of it as a URL for your models. It's provided by the [Globalid Laravel](https://github.com/tonysm/globalid-laravel) package, which the Rich Text Laravel package uses under the hood. That should be added to the Trix attachment in the front-end. Our final version there should be something like this:
 
 ```blade
 @props(['id', 'value', 'name', 'disabled' => false])
