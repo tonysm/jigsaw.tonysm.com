@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 title: 'Rich Text Laravel Attachments With Media Library'
-date:   2022-06-29
+date:   2022-08-07
 tags: rich-text-laravel richtext laravel trix
 section: content
 excerpt: In a previous introduction to the Rich Text Laravel package I hinted that I wanted to cover how to build a more advanced attachment handling using Spatie's Media Library package. This is the follow-up for that.
