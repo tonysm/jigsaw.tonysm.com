@@ -2,53 +2,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-mark {
-    background: transparent !important;
-    position: relative;
-}
-
-mark:after {
-    position: absolute;
-    --bg-opacity: 1;
-    background-color: #faf77d;
-    background-color: rgba(250,247,125,var(--bg-opacity));
-    margin-top: .25rem;
-    margin-left: .25rem;
-    width: 100%;
-    z-index: -1;
-    height: 50%;
-    top: 5px;
-    left: 2px;
-    content: "";
-}
-
-/* Links */
-a:not(.button-link):not(.no-underline) {
-    text-decoration-line: underline;
-    text-decoration-style: wavy;
-    text-underline-offset: .1em;
-    text-decoration-thickness: .04em;
-}
-
-a:hover:not(.button-link):not(.no-underline) {
-    text-decoration-color: darkblue;
-    color: darkblue;
-}
-
-a.back:after {
-    @apply rounded-full;
-}
-
 /** Text Selection */
-
-img, .twitter-tweet {
-    @apply mx-auto shadow-xl;
-
-    max-width: 80%;
-}
 
 ::-moz-selection { @apply bg-yellow-100; }
 ::selection { @apply bg-yellow-100; }
+
+/** Torchlight Code */
 
 pre code::-moz-selection { @apply bg-blue-600; }
 pre code::selection { @apply bg-blue-600; }

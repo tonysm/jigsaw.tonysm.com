@@ -15,5 +15,19 @@ return [
             'author' => 'Tony Messias',
             'sort' => '-date',
         ],
+
+        'repositories' => [
+            'path' => function ($repo) {
+                return Str::slug($repo->name);
+            },
+            'sort' => 'position',
+        ],
+
+        'courses' => [
+            'path' => function ($course) {
+                return Str::slug($course->name);
+            },
+            'sort' => 'position',
+        ],
     ],
 ];
